@@ -23,6 +23,16 @@
 
         <h1>On Double Click Button</h1>
         <button id="btn4" ondblclick="doubleClick()" ">Double click</button>
+        <hr>
+
+        <h1>Keyboard events</h1>
+        <label for="keyInput">Press a key:</label>
+        <input type="text" id="keyInput" onkeydown="keyPressed(event)" placeholder="Type something">
+
+        <p id="result"></p>
+
+
+
 
 
         <script>
@@ -57,7 +67,14 @@
                 alert("You double clicked the button");
             }
 
-            /**/
+            
+            /*keyboard events*/
+            function keyPressed(event) {
+            document.getElementById("result").innerHTML =
+                "You pressed: " + event.key;
+            }
+
+
         </script>
         
     </main>
