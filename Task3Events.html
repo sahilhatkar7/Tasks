@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body id="background">
+    <!--JavaScript events-->
+    <main>
+
+        <h1>Onclick event alertbox.</h1>
+        <button onclick="showMsg()">Click</button>
+        <hr>
+        
+        <h1>Mouse over  event button color changes. </h1>
+        <button onmouseover="btnOver()" id="btn2" >Hover over me!</button>
+        <hr>
+
+        <h1>Mouse out event button color changes. </h1>
+        <button onmouseover="btnOver2()" onmouseout="btnOut()" id="btn3" >Hover over me!</button>
+        <hr>
+
+        <h1>On Double Click Button</h1>
+        <button id="btn4" ondblclick="doubleClick()" ">Double click</button>
+
+
+        <script>
+            /*onclick event*/
+            function showMsg(){
+                alert("you clicked the button");
+            }
+
+
+            /*mouse over event*/
+            let button=document.getElementById("btn2");
+            function btnOver(){
+                button.style.backgroundColor="red";
+                button.style.color="white";
+            }
+
+
+            /*mouse out event*/
+            let button2 =document.getElementById("btn3");
+            function btnOut(){
+                button2.style.backgroundColor="white";
+                button2.style.color="black";
+            }
+            function btnOver2(){
+                button2.style.backgroundColor="red";
+                button2.style.color="white";
+            }
+
+
+            /*double click event*/
+            function doubleClick(){
+                alert("You double clicked the button");
+            }
+
+            /**/
+        </script>
+        
+    </main>
+</body>
+</html>

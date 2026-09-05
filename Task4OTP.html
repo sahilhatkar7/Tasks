@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <main>
+        <!--Generate OTP from mobile number -->
+        <label for="mobile">Enter your mobile number:</label>
+        <input type="text" id="mobile" name="mobile" placeholder="Enter mobile number">
+        <button onclick="generateOTP()">Generate OTP</button>
+        <p id="otpMessage"></p>
+
+        <script>
+            function generateOTP(){
+                let mobile=document.getElementById("mobile").value;
+
+                let lastFour=mobile.slice(-4);
+
+
+                let digits = lastFour.split("");
+
+
+                let otp = "";
+
+                while (digits.length > 0) {
+
+                    let random = Math.floor(Math.random() * digits.length);
+
+                    otp += digits[random];
+
+                    digits.splice(random, 1);
+                }
+
+                document.getElementById("otpMessage").innerHTML = otp;
+            }
+        </script>
+    </main>
+</body>
+</html>
