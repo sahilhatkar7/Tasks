@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>User Registration Form</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+
+<body class="min-h-screen bg-gradient-to-br from-blue-50 via-slate-50 to-indigo-100 p-4 sm:p-6">
+
+    <main class="w-full max-w-5xl mx-auto">
+
+        <!-- Main Card -->
+        <div class="bg-white/95 backdrop-blur rounded-2xl shadow-2xl p-5 sm:p-8 md:p-10">
+
+            <!-- Heading -->
+            <div class="text-center mb-8">
+
+                <h1 class="text-3xl sm:text-4xl font-bold text-slate-800">
+                    User Registration
+                </h1>
+
+                <p class="text-slate-500 mt-2 text-sm sm:text-base">
+                    Enter your details to register
+                </p>
+
+            </div>
+
+
+            <!-- Form -->
+            <form id="userform"
+                class="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-6">
+
+                <!-- Name -->
+                <div>
+                    <label for="name"
+                        class="block text-sm font-semibold text-slate-700 mb-2">
+                        Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="name"
+                        name="name"
+                        placeholder="Enter your name"
+                        required
+                        class="w-full px-4 py-3 rounded-lg border border-slate-300
+                        bg-slate-50 text-slate-800
+                        outline-none transition
+                        focus:border-blue-500
+                        focus:ring-4 focus:ring-blue-100
+                        focus:bg-white">
+                </div>
+
+
+                <!-- Age -->
+                <div>
+                    <label for="age"
+                        class="block text-sm font-semibold text-slate-700 mb-2">
+                        Age
+                    </label>
+
+                    <input
+                        type="number"
+                        id="age"
+                        name="age"
+                        placeholder="Enter your age"
+                        required
+                        class="w-full px-4 py-3 rounded-lg border border-slate-300
+                        bg-slate-50 text-slate-800
+                        outline-none transition
+                        focus:border-blue-500
+                        focus:ring-4 focus:ring-blue-100
+                        focus:bg-white">
+                </div>
+
+
+                <!-- Mobile -->
+                <div>
+                    <label for="mobile"
+                        class="block text-sm font-semibold text-slate-700 mb-2">
+                        Mobile Number
+                    </label>
+
+                    <input
+                        type="text"
+                        id="mobile"
+                        name="mobile"
+                        placeholder="Enter your mobile number"
+                        required
+                        class="w-full px-4 py-3 rounded-lg border border-slate-300
+                        bg-slate-50 text-slate-800
+                        outline-none transition
+                        focus:border-blue-500
+                        focus:ring-4 focus:ring-blue-100
+                        focus:bg-white">
+                </div>
+
+
+                <!-- Course -->
+                <div>
+                    <label for="course"
+                        class="block text-sm font-semibold text-slate-700 mb-2">
+                        Course
+                    </label>
+
+                    <input
+                        type="text"
+                        id="course"
+                        name="course"
+                        placeholder="Enter your course"
+                        required
+                        class="w-full px-4 py-3 rounded-lg border border-slate-300
+                        bg-slate-50 text-slate-800
+                        outline-none transition
+                        focus:border-blue-500
+                        focus:ring-4 focus:ring-blue-100
+                        focus:bg-white">
+                </div>
+
+
+                <!-- Submit Button -->
+                <div class="md:col-span-2 flex justify-center mt-2">
+
+                    <button
+                        type="submit"
+                        class="w-full sm:w-56 px-6 py-3
+                        rounded-lg
+                        bg-gradient-to-r from-blue-600 to-indigo-600
+                        text-white font-semibold
+                        shadow-lg shadow-blue-200
+                        hover:from-blue-700 hover:to-indigo-700
+                        hover:-translate-y-0.5
+                        active:translate-y-0
+                        transition duration-300
+                        cursor-pointer">
+
+                        Add User
+
+                    </button>
+
+                </div>
+
+            </form>
+
+
+            <!-- User Details -->
+            <div class="mt-20 pt-6 border-t border-slate-200">
+
+                <!-- Table Heading -->
+                <div class="flex flex-col sm:flex-row
+                    sm:items-center sm:justify-between gap-3 mb-5">
+
+                    <div>
+                        <h2 class="text-2xl font-bold text-slate-800 text-center">
+                            User Details
+                        </h2>
+
+                        <p class="text-sm text-slate-500 mt-1">
+                            Registered users
+                        </p>
+                    </div>
+
+                    <!-- User Count -->
+                    <span
+                        id="userCount"
+                        class="w-fit px-4 py-2 rounded-full
+                        bg-blue-100 text-blue-700
+                        text-sm font-semibold">
+                        Users: 0
+                    </span>
+
+                </div>
+
+
+                <!-- Responsive Table -->
+                <div class="w-full overflow-x-auto rounded-xl border border-slate-200">
+
+                    <table class="w-full min-w-[650px] text-left">
+
+                        <!-- Table Header -->
+                        <thead class="bg-slate-900 text-white">
+
+                            <tr>
+
+                                <th class="px-5 py-4 text-sm font-semibold">
+                                    #
+                                </th>
+
+                                <th class="px-5 py-4 text-sm font-semibold">
+                                    Name
+                                </th>
+
+                                <th class="px-5 py-4 text-sm font-semibold">
+                                    Age
+                                </th>
+
+                                <th class="px-5 py-4 text-sm font-semibold">
+                                    Mobile
+                                </th>
+
+                                <th class="px-5 py-4 text-sm font-semibold">
+                                    Course
+                                </th>
+
+                            </tr>
+
+                        </thead>
+
+
+                        <!-- Table Body -->
+                        <tbody
+                            id="userTable"
+                            class="divide-y divide-slate-200 bg-white">
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- JavaScript -->
+        <script>
+
+            const form = document.getElementById("userform");
+
+            const userTable = document.getElementById("userTable");
+
+            const userCount = document.getElementById("userCount");
+
+
+            // Array to store all users
+            const users = [];
+
+
+            // Form Submit
+            form.addEventListener("submit", function(event) {
+
+                event.preventDefault();
+
+
+                // Get Form Data
+                const user = new FormData(form);
+
+
+                // Create User Object
+                const userdetails = {
+
+                    name: user.get("name"),
+
+                    age: user.get("age"),
+
+                    mobile: user.get("mobile"),
+
+                    course: user.get("course")
+
+                };
+
+
+                // Add object into array
+                users.push(userdetails);
+
+
+                // Display users
+                displayUsers();
+
+
+                // Clear form
+                form.reset();
+
+            });
+
+
+            // Display Users in Table
+            function displayUsers() {
+
+                // Clear old table data
+                userTable.innerHTML = "";
+
+
+                // Loop through users array
+                users.forEach(function(user, index) {
+
+                    const row = document.createElement("tr");
+
+
+                    row.className =
+                        "hover:bg-blue-50 transition";
+
+
+                    row.innerHTML = `
+
+                        <td class="px-5 py-4 text-sm text-slate-500 font-medium">
+                            ${index + 1}
+                        </td>
+
+                        <td class="px-5 py-4 text-sm font-semibold text-slate-800">
+                            ${user.name}
+                        </td>
+
+                        <td class="px-5 py-4 text-sm text-slate-600">
+                            ${user.age}
+                        </td>
+
+                        <td class="px-5 py-4 text-sm text-slate-600">
+                            ${user.mobile}
+                        </td>
+
+                        <td class="px-5 py-4">
+
+                            <span class="inline-flex px-3 py-1
+                                rounded-full
+                                bg-blue-100
+                                text-blue-700
+                                text-xs
+                                font-semibold">
+
+                                ${user.course}
+
+                            </span>
+
+                        </td>
+
+                    `;
+
+
+                    userTable.appendChild(row);
+
+                });
+
+
+                // Update user count
+                userCount.textContent =
+                    `Users: ${users.length}`;
+
+            }
+
+        </script>
+
+    </main>
+
+</body>
+
+</html>

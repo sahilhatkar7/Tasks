@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Cards</title>
+
+   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>  
+</head>
+
+<body class="bg-gradient-to-l from-gray-300 to-gray-500">
+
+<main>
+
+    <h1 class="text-center font-bold text-5xl underline my-5">User Details</h1>
+
+    <div  id="container" class="max-w-7xl mx-auto flex justify-between gap-5"></div>
+
+    <script>
+        const products =[
+    {
+      "id": 1,
+      "title": "Cooking Oil",
+      "description": "Versatile cooking oil suitable for frying, sautéing, and various culinary applications.",
+      "category": "groceries",
+      "price": 4.99,
+      "discountPercentage": 9.33,
+      "rating": 4.8,
+      "stock": 10,
+      "tags": [
+        "cooking essentials"
+      ],
+      "sku": "GRO-BRD-COO-020",
+      "weight": 5,
+      "dimensions": {
+        "width": 19.95,
+        "height": 27.54,
+        "depth": 24.86
+      },
+      "warrantyInformation": "Lifetime warranty",
+      "shippingInformation": "Ships in 1-2 business days",
+      "availabilityStatus": "In Stock",
+      "reviews": [
+        {
+          "rating": 5,
+          "comment": "Very happy with my purchase!",
+          "date": "2025-04-30T09:41:02.053Z",
+          "reviewerName": "Victoria McDonald",
+          "reviewerEmail": "victoria.mcdonald@x.dummyjson.com"
+        },
+        {
+          "rating": 2,
+          "comment": "Would not recommend!",
+          "date": "2025-04-30T09:41:02.053Z",
+          "reviewerName": "Hazel Evans",
+          "reviewerEmail": "hazel.evans@x.dummyjson.com"
+        },
+        {
+          "rating": 5,
+          "comment": "Would buy again!",
+          "date": "2025-04-30T09:41:02.053Z",
+          "reviewerName": "Zoe Bennett",
+          "reviewerEmail": "zoe.bennett@x.dummyjson.com"
+        }
+      ],
+      "returnPolicy": "30 days return policy",
+      "minimumOrderQuantity": 46,
+      "meta": {
+        "createdAt": "2025-04-30T09:41:02.053Z",
+        "updatedAt": "2025-04-30T09:41:02.053Z",
+        "barcode": "4874727824518",
+        "qrCode": "https://cdn.dummyjson.com/public/qr-code.png"
+      },
+      "images": [
+        "https://cdn.dummyjson.com/product-images/groceries/cooking-oil/1.webp"
+      ],
+      "thumbnail": "https://cdn.dummyjson.com/product-images/groceries/cooking-oil/thumbnail.webp"
+    },
+    {
+     "id": 2,
+      "title": "Honey Jar",
+      "description": "Pure and natural honey in a convenient jar, perfect for sweetening beverages or drizzling over food.",
+      "category": "groceries",
+      "price": 6.99,
+      "discountPercentage": 14.4,
+      "rating": 3.97,
+      "stock": 34,
+      "tags": [
+        "condiments"
+      ],
+      "sku": "GRO-BRD-HON-027",
+      "weight": 2,
+      "dimensions": {
+        "width": 9.28,
+        "height": 21.72,
+        "depth": 17.74
+      },
+      "warrantyInformation": "1 month warranty",
+      "shippingInformation": "Ships in 1-2 business days",
+      "availabilityStatus": "In Stock",
+      "reviews": [
+        {
+          "rating": 1,
+          "comment": "Very disappointed!",
+          "date": "2025-04-30T09:41:02.053Z",
+          "reviewerName": "Autumn Gomez",
+          "reviewerEmail": "autumn.gomez@x.dummyjson.com"
+        },
+        {
+          "rating": 4,
+          "comment": "Highly impressed!",
+          "date": "2025-04-30T09:41:02.053Z",
+          "reviewerName": "Benjamin Wilson",
+          "reviewerEmail": "benjamin.wilson@x.dummyjson.com"
+        },
+        {
+          "rating": 2,
+          "comment": "Very disappointed!",
+          "date": "2025-04-30T09:41:02.053Z",
+          "reviewerName": "Nicholas Edwards",
+          "reviewerEmail": "nicholas.edwards@x.dummyjson.com"
+        }
+      ],
+      "returnPolicy": "90 days return policy",
+      "minimumOrderQuantity": 47,
+      "meta": {
+        "createdAt": "2025-04-30T09:41:02.053Z",
+        "updatedAt": "2025-04-30T09:41:02.053Z",
+        "barcode": "6354306346329",
+        "qrCode": "https://cdn.dummyjson.com/public/qr-code.png"
+      },
+      "images": [
+        "https://cdn.dummyjson.com/product-images/groceries/honey-jar/1.webp"
+      ],
+      "thumbnail": "https://cdn.dummyjson.com/product-images/groceries/honey-jar/thumbnail.webp"
+    }]
+
+        const container = document.getElementById("container");
+
+        products.forEach(user => {
+
+            const card = document.createElement("div");
+
+           card.innerHTML=`
+           <div class=" bg-gray-300 rounded-xl p-10 my-8 ">
+           <img src=${user.images} class="w-150 h-100 shadow-lg rounded-lg">
+           <h2 class="text-lg text-red-500 text font-bold">${user.id}</h2>
+           <p class="text-lg text-black font-bold "><u><b>Product</b></u>:- ${user.title}</p>
+           <p><u><b>About</b></u>:- ${user.description}</p>
+           <p><u><b>Product Type</b></u>:- ${user.category}</p>
+           <h2 class="text-green-700 text-2xl font-bold "><u>Price</u>:-${user.price} $</h2>
+           <h1 class="text-red-600 text-4xl font-bold italic"><u>Discount</u>:- ${user.discountPercentage}%</h1>
+           <p class="font-bold text-right"><u>Available Stocks</u>:- ${user.stock}</p>
+           <button class="p-3 bg-blue-300 border border-2 rounded-xl text-center ml-55 mt-5 ">Buy Now</button>
+
+           </div>
+           `;
+
+            container.appendChild(card);
+        });
+    </script>
+</main>
+
+</body>
+</html>

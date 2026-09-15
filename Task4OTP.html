@@ -3,15 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Document</title >
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
-<body>
-    <main>
+<body class="bg-slate-500">
+
+    <main class="max-w-7xl mx-auto bg-gradient-to-t from-slate-700 to-slate-900 text-white rounded-2xl mt-5 w-200 shadow-2xl ">
+
         <!--Generate OTP from mobile number -->
-        <label for="mobile">Enter your mobile number:</label>
-        <input type="text" id="mobile" name="mobile" placeholder="Enter mobile number">
-        <button onclick="generateOTP()">Generate OTP</button>
-        <p id="otpMessage"></p>
+        
+        <div class="flex flex-col items-center ">
+        <h1 class="text-5xl m-6 text-center underline ">Generate OTP</h1>
+        <label for="mobile" class=" text-cyan-500 m-5  underline font-bold bg-gray-500 p-3 rounded-lg">Enter your mobile number:</label><br>
+
+        <input type="text" id="mobile" name="mobile" placeholder="Enter mobile number" class="w-100 border
+                               border-gray-600
+                               bg-gray-700
+                               p-3 rounded-lg
+                               focus:ring-2
+                               focus:ring-blue-500
+                               outline-none m-5"><br>
+
+        <button onclick="generateOTP()" class="bg-slate-500 p-3 rounded-lg">Generate OTP</button><br>
+
+        <p>Your OTP:-</p>
+
+        <p id="otpMessage"  class=" text-white p-4 rounded-lg underline"></p>
+
+        </div>
 
         <script>
             function generateOTP(){

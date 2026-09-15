@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--Json data into Table format-->
+    <main>
+
+            <!--Table-->
+
+            <h1>User Details</h1>
+
+            <table border="3">
+
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Age</th>
+                        <th>City</th>
+                    </tr>
+                </thead>
+
+                <tbody id="userTable">
+                </tbody>
+
+            </table>
+
+             <script>
+
+                   fetch("tabledata.json")
+                   .then(Response=>Response.json())
+                   .then(data=>{
+
+                    let tableData="";
+                    data.forEach(user => {
+                 
+                        tableData+=`
+                        <tr>
+                            <td>${user.id}</td>
+                            <td>${user.name}</td>
+                            <td>${user.age}</td>
+                            <td>${user.city}</td>
+                        </tr>
+
+                        `;
+                       
+                   });
+
+                   document.getElementById("userTable").innerHTML=tableData;
+
+                });
+
+                    </script>
+
+    </main>
+</body>
+</html>
